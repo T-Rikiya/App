@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+
   def new
     @list = List.new
   end
@@ -9,7 +10,7 @@ class ListsController < ApplicationController
       redirect_to list_path(@list.id)
     else
       render :new
-    end  
+    end
   end
 
   def index
@@ -35,10 +36,10 @@ class ListsController < ApplicationController
     list.update(list_params)
     redirect_to list_path(list.id)
   end
-  
+
   private
   def list_params
     params.require(:list).permit(:title, :body, :image)
   end
-  
-end  
+
+end
